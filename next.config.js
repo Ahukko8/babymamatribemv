@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true, // required for static export
   },
-  basePath: '/babymamatribemv',
+  // basePath: '/babymamatribemv',
   images: {
     domains: ["images.unsplash.com"],
   },
