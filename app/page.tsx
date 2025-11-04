@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -20,7 +19,7 @@ export default function Home() {
                 Welcome to Babymamatribemv
               </h1>
               <p className="text-lg md:text-xl text-primary-dark mb-8 leading-relaxed">
-                Discover premium baby items curated with love and care. 
+                Discover premium baby items curated with love and care.
                 Everything your little one needs, from essentials to special keepsakes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -45,13 +44,12 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative h-96 w-96 lg:h-[500px] lg:w-[500px] mx-auto"
             >
-              <Image
-                src="/logo.jpg"
+              <img
+                src="/babymamatribemv/logo.jpg"
                 alt="Babymamatribemv Logo"
-                fill
-                className="object-cover rounded-full shadow-2xl"
-                priority
+                className="object-cover rounded-full shadow-2xl w-full h-full"
               />
+
             </motion.div>
           </div>
         </div>

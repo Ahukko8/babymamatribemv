@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -24,20 +23,19 @@ export default function Navbar() {
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative h-16 w-16"
+              className="relative h-16 w-16 overflow-hidden rounded-full"
             >
-              <Image
-                src="/logo.jpg"
+              <img
+                src="/babymamatribemv/logo.jpg"
                 alt="Babymamatribemv Logo"
-                fill
-                className="object-contain rounded-full"
-                priority
+                className="object-contain w-full h-full"
               />
             </motion.div>
             <span className="hidden sm:block text-xl font-bold text-primary-brown">
               Babymamatribemv
             </span>
           </Link>
+
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">

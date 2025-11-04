@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function AboutPage() {
@@ -84,12 +83,12 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl"
             >
-              <Image
-                src="/logo.jpg"
-                alt="About Babymamatribemv"
-                fill
-                className="object-cover"
+              <img
+                src="/babymamatribemv/logo.jpg"
+                alt="Babymamatribemv Logo"
+                className="object-cover rounded-full shadow-2xl w-full h-full"
               />
+
             </motion.div>
           </div>
         </div>

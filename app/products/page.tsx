@@ -1,7 +1,7 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 interface Product {
@@ -372,17 +372,17 @@ export default function ProductsPage() {
             <button
               key={category}
               onClick={() => handleCategoryChange(category)}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
-                selectedCategory === category
+              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${selectedCategory === category
                   ? "bg-primary-brown text-white shadow-lg"
                   : "bg-white text-primary-brown hover:bg-primary-light border border-primary-brown"
-              }`}
+                }`}
             >
               {category}
             </button>
           ))}
         </motion.div>
 
+        {/* Products Grid */}
         {/* Products Grid */}
         <motion.div
           layout
@@ -400,14 +400,16 @@ export default function ProductsPage() {
               onMouseLeave={() => setHoveredProduct(null)}
               className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300"
             >
-              <div className="relative h-64 w-full">
-                <Image
-                  src={product.image}
+              <div className="relative h-64 w-full overflow-hidden">
+                <img
+                  src={
+                    product.image.startsWith("http")
+                      ? product.image
+                      : `/babymamatribemv/${product.image}`
+                  }
                   alt={product.name}
-                  fill
-                  className={`object-cover transition-transform duration-300 ${
-                    hoveredProduct === product.id ? "scale-110" : ""
-                  }`}
+                  className={`object-cover w-full h-full transition-transform duration-300 ${hoveredProduct === product.id ? "scale-110" : ""
+                    }`}
                 />
                 <div className="absolute top-4 right-4 bg-accent-coral text-white px-3 py-1 rounded-full text-sm font-semibold">
                   {product.category}
@@ -453,11 +455,10 @@ export default function ProductsPage() {
             <button
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
-              className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
-                currentPage === 1
+              className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${currentPage === 1
                   ? "bg-gray-200 text-gray-400 cursor-not-allowed"
                   : "bg-primary-brown text-white hover:bg-primary-dark"
-              }`}
+                }`}
             >
               Previous
             </button>
@@ -467,11 +468,10 @@ export default function ProductsPage() {
                 <button
                   key={page}
                   onClick={() => handlePageChange(page)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
-                    currentPage === page
+                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${currentPage === page
                       ? "bg-primary-brown text-white shadow-lg"
                       : "bg-white text-primary-brown hover:bg-primary-light border border-primary-brown"
-                  }`}
+                    }`}
                 >
                   {page}
                 </button>
@@ -481,11 +481,10 @@ export default function ProductsPage() {
             <button
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
-                currentPage === totalPages
+              className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${currentPage === totalPages
                   ? "bg-gray-200 text-gray-400 cursor-not-allowed"
                   : "bg-primary-brown text-white hover:bg-primary-dark"
-              }`}
+                }`}
             >
               Next
             </button>
