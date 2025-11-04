@@ -153,7 +153,7 @@ export default function AboutPage() {
               a community where families can connect, share, and grow together.
             </p>
             <p className="text-lg md:text-xl text-primary-dark leading-relaxed">
-              We believe that parenthood is a journey best traveled together, and we're here
+              We believe that parenthood is a journey best traveled together, and we are here
               to support you every step of the way.
             </p>
           </motion.div>
