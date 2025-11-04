@@ -1,13 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // enables static export
+  output: 'export', // required for static export
+  basePath: '/babymamatribemv', // needed for subpath deployment
   images: {
     unoptimized: true, // required for static export
-  },
-  // basePath: '/babymamatribemv',
-  images: {
-    domains: ["images.unsplash.com"],
+    domains: ["images.unsplash.com"], // allowed domains for images
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
